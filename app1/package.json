@@ -5,7 +5,7 @@
     "dev": "umi dev",
     "build": "umi build",
     "postinstall": "umi setup",
-    "start": "npm run dev"
+    "start": "set port=8001 && npm run dev"
   },
   "dependencies": {
     "vue": "^3.2.47",
