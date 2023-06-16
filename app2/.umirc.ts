@@ -18,6 +18,15 @@ export default defineConfig({
       redirect: '/home',
     },
     {
+      name: 'Page1',
+      path: '/page1',
+      component: './page1',
+    },
+    {
+      path: '/page2',
+      component: './page2',
+    },
+    {
       name: '首页',
       path: '/home',
       component: './Home',

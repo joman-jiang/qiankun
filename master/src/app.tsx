@@ -4,12 +4,11 @@ import { LinkOutlined } from '@ant-design/icons';
 import type { Settings as LayoutSettings } from '@ant-design/pro-components';
 import { SettingDrawer } from '@ant-design/pro-components';
 import type { RunTimeLayoutConfig } from '@umijs/max';
-import { history, Link } from '@umijs/max';
+import { Link, history } from '@umijs/max';
 import defaultSettings from '../config/defaultSettings';
+import { AvatarDropdown, AvatarName } from './components/RightContent/AvatarDropdown';
 import { errorConfig } from './requestErrorConfig';
 import { currentUser as queryCurrentUser } from './services/ant-design-pro/api';
-import React from 'react';
-import { AvatarDropdown, AvatarName } from './components/RightContent/AvatarDropdown';
 const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
 
@@ -133,4 +132,27 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
  */
 export const request = {
   ...errorConfig,
+};
+
+export const qiankun = {
+  apps: [
+    {
+      name: 'app1',
+      entry: '//localhost:8001',
+    },
+    {
+      name: 'app2',
+      entry: '//localhost:8002',
+    },
+    {
+      name: 'app3',
+      entry: '//localhost:8003',
+    },
+  ],
+  lifeCycles: {
+    // 所有子应用在挂载完成时，打印 props 信息
+    async afterMount(props:any) {
+      console.log(props);
+    },
+  },
 };

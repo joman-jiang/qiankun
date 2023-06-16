@@ -22,6 +22,20 @@ export default [
       },
     ],
   },
+  // {
+  //   path: '/app2/*',
+  //   microApp: 'app2',
+  // },
+  {
+    path: '/app2/*',
+    component: './index/index',
+  },
+  {
+    path: '/index',
+    name: 'Index1',
+    icon: 'smile',
+    component: './index/index1',
+  },
   {
     path: '/welcome',
     name: 'welcome',
