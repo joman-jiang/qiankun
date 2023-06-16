@@ -44,4 +44,3 @@ export default defineConfig({
   ],
   npmClient: 'yarn',
 });
-

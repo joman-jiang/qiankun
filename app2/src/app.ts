@@ -21,11 +21,11 @@ export const qiankun = {
     console.log('app1 bootstrap', props);
   },
   // 应用 render 之前触发
-  async mount(props:any) {
+  async mount(props: any) {
     console.log('app1 mount', props);
   },
   // 应用卸载之后触发
-  async unmount(props:any) {
+  async unmount(props: any) {
     console.log('app1 unmount', props);
   },
 };
