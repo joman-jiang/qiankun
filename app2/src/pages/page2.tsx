@@ -1,5 +1,6 @@
 import AccessT from '@/components/AccessT';
-import { Button, Space, message } from 'antd';
+import { Button, Drawer, Space, message } from 'antd';
+import { useState } from 'react';
 import { useModel } from 'umi';
 
 export default function Page() {
@@ -13,6 +14,8 @@ export default function Page() {
     },
   } = masterProps;
 
+  const [open, setOpen] = useState(false);
+
   const showParam = () => {
     modalInfo(masterProps);
   };
@@ -25,13 +28,27 @@ export default function Page() {
     });
   };
 
+  const showDrawer = () => {
+    setOpen(true);
+  };
+
+  const onClose = () => {
+    setOpen(false);
+  };
+
   return (
     <AccessT permission="ddd">
       <p>当前用户：{name}</p>
       <Space>
         <Button onClick={showParam}>查看接收的参数</Button>
         <Button onClick={callBackRequest}>请求父应用的弹出，并收到回调</Button>
+        <Button type="primary" onClick={showDrawer}> OpenDrawer </Button>
       </Space>
+      <Drawer title="Basic Drawer" placement="right" onClose={onClose} open={open}>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Drawer>
     </AccessT>
   );
 }
