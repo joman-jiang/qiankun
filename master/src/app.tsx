@@ -144,10 +144,10 @@ export const qiankun = {
       name: 'app2',
       entry: '//localhost:8002',
     },
-    {
-      name: 'app3',
-      entry: '//localhost:8003',
-    },
+    // {
+    //   name: 'app3',
+    //   entry: '//localhost:8003',
+    // },
   ],
   lifeCycles: {
     // 所有子应用在挂载完成时，打印 props 信息

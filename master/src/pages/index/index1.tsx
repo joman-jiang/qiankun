@@ -1,12 +1,7 @@
-
-
 import useGlobalState from "@/globalState";
-import { Access, MicroAppWithMemoHistory, useAccess } from "@umijs/max";
-import { Button, Result } from "antd";
+import { MicroAppWithMemoHistory } from "@umijs/max";
 
-const Index1: React.FC = () => {
-
-  const access = useAccess();
+const Index: React.FC = () => {
 
   const {globalState, setGlobalState} = useGlobalState({
     slogan: 'Hello MicroFrontend1111111111',
@@ -14,22 +9,10 @@ const Index1: React.FC = () => {
     userId:5
   })
 
+  // return <MicroApp name="app1" globalState={globalState}
+  // setGlobalState={setGlobalState}/>
 
-
-  // return <MicroAppWithMemoHistory  name="app2" url="/app2/page2" globalState={globalState}
-  // setGlobalState={setGlobalState}/>;
-  return <Access accessible={access.canAdmin === true} fallback={<Result
-    status="403"
-    title="403"
-    subTitle="Sorry, you are not authorized to access this page."
-    extra={
-      <Button type="primary" href="http://localhost:8000/">
-        Back Home
-      </Button>
-    }
-  />}>
-    <MicroAppWithMemoHistory  name="app2" url="/app2/page2" globalState={globalState}
-  setGlobalState={setGlobalState}/>;
-  </Access>
+  return <MicroAppWithMemoHistory  name="app1" url="/app1/about" globalState={globalState}
+  setGlobalState={setGlobalState}/>
 }
-export default Index1
+export default Index

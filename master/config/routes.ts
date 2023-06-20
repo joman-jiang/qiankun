@@ -31,10 +31,16 @@ export default [
     component: './index/index',
   },
   {
-    path: '/index',
+    path: '/index1',
     name: 'Index1',
     icon: 'smile',
     component: './index/index1',
+  },
+  {
+    path: '/index2',
+    name: 'Index2',
+    icon: 'smile',
+    component: './index/index2',
   },
   {
     path: '/welcome',
