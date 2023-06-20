@@ -4,7 +4,7 @@ import { LinkOutlined } from '@ant-design/icons';
 import type { Settings as LayoutSettings } from '@ant-design/pro-components';
 import { SettingDrawer } from '@ant-design/pro-components';
 import type { RunTimeLayoutConfig } from '@umijs/max';
-import { Link, history } from '@umijs/max';
+import { Link, history, useIntl as initl } from '@umijs/max';
 import defaultSettings from '../config/defaultSettings';
 import { AvatarDropdown, AvatarName } from './components/RightContent/AvatarDropdown';
 import { errorConfig } from './requestErrorConfig';
@@ -62,6 +62,15 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
     waterMarkProps: {
       content: initialState?.currentUser?.name,
     },
+    // 面包屑渲染
+    breadcrumbRender: (routers = []) => [
+      {
+        path: '/',
+        breadcrumbName: initl().formatMessage({ id: 'menu.home' }),
+        title: '',
+      },
+      ...routers,
+    ],
     footerRender: () => <Footer />,
     onPageChange: () => {
       const { location } = history;

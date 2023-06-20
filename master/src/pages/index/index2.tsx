@@ -1,6 +1,7 @@
 
 
 import useGlobalState from "@/globalState";
+import { PageContainer } from "@ant-design/pro-components";
 import { Access, MicroAppWithMemoHistory, useAccess } from "@umijs/max";
 import { Button, Result } from "antd";
 
@@ -18,7 +19,8 @@ const Index1: React.FC = () => {
 
   // return <MicroAppWithMemoHistory  name="app2" url="/app2/page2" globalState={globalState}
   // setGlobalState={setGlobalState}/>;
-  return <Access accessible={access.canAdmin === true} fallback={<Result
+  return <PageContainer title={false}>
+    <Access accessible={access.canAdmin === true} fallback={<Result
     status="403"
     title="403"
     subTitle="Sorry, you are not authorized to access this page."
@@ -31,5 +33,6 @@ const Index1: React.FC = () => {
     <MicroAppWithMemoHistory  name="app2" url="/app2/page2" globalState={globalState}
   setGlobalState={setGlobalState}/>
   </Access>
+  </PageContainer>
 }
 export default Index1
