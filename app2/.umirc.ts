@@ -27,6 +27,10 @@ export default defineConfig({
       component: './page2',
     },
     {
+      path: '/userSelect',
+      component: './userSelect',
+    },
+    {
       name: '首页',
       path: '/home',
       component: './Home',
