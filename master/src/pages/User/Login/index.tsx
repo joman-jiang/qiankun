@@ -16,11 +16,11 @@ import {
   ProFormText,
 } from '@ant-design/pro-components';
 import { useEmotionCss } from '@ant-design/use-emotion-css';
-import { FormattedMessage, history, SelectLang, useIntl, useModel, Helmet } from '@umijs/max';
-import { Alert, message, Tabs } from 'antd';
-import Settings from '../../../../config/defaultSettings';
+import { FormattedMessage, Helmet, SelectLang, history, useIntl, useModel } from '@umijs/max';
+import { Alert, Tabs, message } from 'antd';
 import React, { useState } from 'react';
 import { flushSync } from 'react-dom';
+import Settings from '../../../../config/defaultSettings';
 
 const ActionIcons = () => {
   const langClassName = useEmotionCss(({ token }) => {
@@ -217,6 +217,7 @@ const Login: React.FC = () => {
           {type === 'account' && (
             <>
               <ProFormText
+              initialValue={"admin"}
                 name="username"
                 fieldProps={{
                   size: 'large',
@@ -239,6 +240,7 @@ const Login: React.FC = () => {
                 ]}
               />
               <ProFormText.Password
+              initialValue={"ant.design"}
                 name="password"
                 fieldProps={{
                   size: 'large',

@@ -1,9 +1,11 @@
+import microApp from '@micro-zoe/micro-app';
 import { useIntl } from '@umijs/max';
 import { Button, message, notification } from 'antd';
 import defaultSettings from '../config/defaultSettings';
-
 const { pwa } = defaultSettings;
 const isHttps = document.location.protocol === 'https:';
+
+microApp.start()
 
 const clearCache = () => {
   // remove all caches

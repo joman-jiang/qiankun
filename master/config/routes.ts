@@ -43,6 +43,12 @@ export default [
     component: './index/index2',
   },
   {
+    path: '/micro-app',
+    name: 'Micro App',
+    icon: 'smile',
+    component: './microapp/index',
+  },
+  {
     path: '/welcome',
     name: 'welcome',
     icon: 'smile',

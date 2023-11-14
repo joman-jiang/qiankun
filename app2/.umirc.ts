@@ -27,6 +27,10 @@ export default defineConfig({
       component: './page2',
     },
     {
+      path: '/pageMicroApp',
+      component: './p_microapp',
+    },
+    {
       path: '/userSelect',
       component: './userSelect',
     },
